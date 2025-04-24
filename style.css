@@ -1,0 +1,203 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #faf1e6;
+    background-size: cover;
+}
+
+/* Header Styles */
+header {
+    background-color: #f1d9cd;
+    color: #6e5a5a;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-family: 'Georgia', serif;
+}
+
+header h1 {
+    margin: 0;
+    text-decoration: underline;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 3rem;
+}
+
+header h2 {
+  font-family: 'Georgia', serif;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.couple-image {
+    width: 60%;
+    height: auto;
+    border-radius: 5%;
+    margin-top: 50px;
+}
+
+.save-date {
+    font-size: 2.5rem;
+    color: #6b001c;
+    margin-top: 10px;
+    font-family: 'Brush Script MT', serif;
+}
+
+.names-date {
+    font-size: 3rem;
+    color: #6b001c;
+    margin-top: 3%;
+    font-family: 'Papyrus', serif;
+}
+
+.getting_married {
+    font-size: 2rem;
+    color: #6b001c;
+    font-family: 'Brush Script MT', serif;
+}
+
+/* Flexbox for Groom and Bride images with names */
+.couple-info {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    align-items: center;
+}
+
+.couple-info img {
+    width: 50%;
+    border-radius: 10px;
+}
+
+.couple-info .groom, .couple-info .bride {
+    font-size: 1.5rem;
+    color: #6b001c;
+    margin-top: 15px;
+    font-family: 'Georgia', serif;
+}
+
+.couple-info .groom-degree, .couple-info .bride-degree {
+    font-size: 1.2rem;
+    color: #6b001c;
+    font-family: 'Georgia', serif;
+    margin-top: 10px;
+}
+
+/* Venue Section */
+.venue-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 50px auto;
+    max-width: 1200px;
+}
+
+.venue-images {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.venue-images img {
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 13px 13px 6px rgba(0, 0, 0, 0.1);
+}
+
+.venue-section {
+padding: 30px; /* Increased padding for better spacing */
+max-width: 700px; /* Increased the size of the venue box */
+border: 2px solid #9b1f40;
+border-radius: 10px;
+background-color: #ffffff;
+box-shadow: 13px 13px 6px rgba(0, 0, 0, 0.1);
+text-align: left;
+}
+
+.venue-section h2 {
+    color: #9b1f40;
+    font-family: 'Georgia', serif;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.venue-section p {
+    margin: 10px 0;
+    color: #6b001c;
+    font-family: 'Georgia', serif;
+    font-size: 1.2rem;
+}
+
+.venue-section button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #9b1f40;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-family: 'Arial', sans-serif;
+}
+
+.venue-section button:hover {
+    background-color: #73132e;
+}
+
+.venue-section button a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-border-down{
+  width: 100%;
+  border: 1px solid #6b001c;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+
+.footer-dot{
+  font-size: 1.5rem; 
+  color: #6b001c; 
+  font-family: 'Georgia', serif;
+  margin: 0 auto;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .venue-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .venue-images img {
+      width: 90%;
+      margin: 0 auto;
+  }
+
+  .venue-section {
+      width: 80%;
+      margin-top: 20px;
+      max-width: 350px;
+  }
+
+  .couple-info img {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+  }
+
+  header {
+      text-align: center;
+  }
+  .couple-image {
+    width: 100%;
+    height: auto;
+    border-radius: 0%;
+    margin-top: 50px;
+}
+}
