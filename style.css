@@ -169,35 +169,59 @@ text-align: left;
 
 /* Responsive Layout */
 @media (max-width: 768px) {
-  .venue-container {
+    .venue-container {
       flex-direction: column;
       align-items: center;
-  }
+    }
 
-  .venue-images img {
+    .venue-images img {
       width: 90%;
       margin: 0 auto;
-  }
+    }
 
-  .venue-section {
+    .venue-section {
       width: 80%;
       margin-top: 20px;
       max-width: 350px;
-  }
+    }
 
-  .couple-info img {
+    .couple-info img {
       width: 80%;
       margin: 0 auto;
       padding: 20px;
-  }
+    }
 
-  header {
+    header {
       text-align: center;
-  }
-  .couple-image {
-    width: 100%;
-    height: auto;
-    border-radius: 0%;
-    margin-top: 50px;
-}
+    }
+    .couple-image {
+        width: 100%;
+        height: auto;
+        border-radius: 0%;
+        margin-top: 50px;
+    }
+    .getting_married {
+        font-size: 2rem;
+        color: #6b001c;
+        font-family: 'Brush Script MT', serif;
+    }
+    .save-date {
+        font-size: 2.5rem;
+        color: #6b001c;
+        margin-top: 10px;
+        font-family: 'Brush Script MT', serif;
+    }
+    
+    .names-date {
+        font-size: 3rem;
+        color: #6b001c;
+        margin-top: 3%;
+        font-family: 'Papyrus', serif;
+    }
+    
+    .getting_married {
+        font-size: 2rem;
+        color: #6b001c;
+        font-family: 'Brush Script MT', serif;
+    }    
 }
