@@ -3,67 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Website</title>
+    <title>Shubham & Vaishnavi's Wedding</title>
+    <!-- Google Fonts for better typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lato:wght@400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <h1>Shubham</h1>
-        <h2>🌸 WEDS 🌸</h2>
-        <h1>Vaishnavi</h1>
-        <h3>Join us in celebrating our special day!</h3>
+
+    <!-- Hero Section (Background image here is NOT targeted) -->
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1 class="script-font couple-name-hero">Shubham</h1>
+            <h2 class="weds-text">🌸 WEDS 🌸</h2>
+            <h1 class="script-font couple-name-hero">Vaishnavi</h1>
+            <p class="invitation-text">Join us in celebrating our special day!</p>
+        </div>
     </header>
 
-    <img src="photos/couple.jpeg" alt="Couple" class="couple-image">
+    <!-- Main Content Area -->
+    <main>
+        <!-- Couple Image Section -->
+        <section class="couple-image-section">
+            <img src="photos/couple1.jpeg" alt="Shubham and Vaishnavi" class="couple-image enlargeable-image">
+        </section>
 
-    <div class="names-date">Shubham & Vaishnavi</div>
-    <div class="getting_married">We are getting married!</div>
-    <div class="save-date">Save the Date</div>
-    <div class="names-date">23 May 2025</div>
+        <!-- Save the Date Section -->
+        <section class="save-date-section">
+            <h2 class="section-title script-font">Shubham & Vaishnavi</h2>
+            <p class="tagline">We are getting married!</p>
+            <h3 class="save-date-title script-font">Save the Date</h3>
+            <p class="wedding-date">23 May 2025</p>
+        </section>
 
-    <!-- Groom and Bride Images -->
-    <div class="couple-info">
-        <div>
-            <img src="photos/groom.jpeg" alt="Groom">
-            <div class="groom">Mr. Shubham Shinde</div>
-            <div class="groom-degree">M.Tech in Artificial Intelligence/Machine Learning</div>
-            <div class="groom-degree">S/O Hanumanrao Ganpati Shinde</div>
-        </div>
-        <div>
-            <img src="photos/bride.jpeg" alt="Bride">
-            <div class="bride">Ms. Vaishnavi Patil</div>
-            <div class="bride-degree">MBA in IT and Sys. Management</div>
-            <div class="bride-degree">D/O Santosh Arun Patil</div>
-        </div>
+        <!-- Divider -->
+        <hr class="section-divider">
+
+        <!-- Groom and Bride Details Section -->
+        <section class="couple-details-section">
+            <h2 class="section-title">Meet the Couple</h2>
+            <div class="couple-info-container">
+                <div class="person-info groom-info">
+                    <img src="photos/groom.jpeg" alt="Groom Shubham" class="person-image enlargeable-image">
+                    <h3 class="person-name">Mr. Shubham Shinde</h3>
+                    <p class="person-details">M.Tech in Artificial Intelligence/Machine Learning</p>
+                    <p class="person-details parentage">S/O Hanumanrao Ganpati Shinde</p>
+                </div>
+                <div class="person-info bride-info">
+                    <img src="photos/bride.jpeg" alt="Bride Vaishnavi" class="person-image enlargeable-image">
+                    <h3 class="person-name">Ms. Vaishnavi Patil</h3>
+                    <p class="person-details">MBA in IT and Sys. Management</p>
+                    <p class="person-details parentage">D/O Santosh Arun Patil</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <hr class="section-divider">
+
+        <!-- Portrait Image Section -->
+        <section class="portrait-image-section">
+            <h2 class="section-title script-font">A Moment Together</h2>
+            <img src="photos/couple2.jpeg" alt="Shubham and Vaishnavi Portrait" class="portrait-image enlargeable-image">
+
+        </section>
+
+        <!-- Divider -->
+        <hr class="section-divider">
+
+        <!-- Venue Section -->
+        <section class="venue-section-wrapper">
+             <h2 class="section-title">Wedding Ceremony & Celebration</h2>
+            <div class="venue-container">
+                <!-- Venue Details -->
+                <div class="venue-details-box">
+                    <h3>Venue Details</h3>
+                    <p><strong>Date:</strong> Friday, May 23, 2025</p>
+                    <p><strong>Muhurtam:</strong> 06:49 PM</p>
+                    <p><strong>Venue:</strong> Shiv Sagar Karyalay</p>
+                    <a href="https://www.google.com/maps/place/Shivsagar+Mangal+Karyalay/@17.2393351,74.5833318,17z/data=!4m6!3m5!1s0x3bc1698f1ecb3ca3:0x685d6fbbaf2d7fa3!8m2!3d17.2393351!4d74.5833318!16s%2Fg%2F11j4v7jx8j?entry=ttu&g_ep=EgoyMDI1MDQyMS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" target="_blank" class="map-button">
+                        View Map & Directions
+                    </a>
+                </div>
+
+                <!-- Venue Photos -->
+                <div class="venue-images">
+                  <img src="photos/venue1.jpeg" alt="Venue Photo 1" class="venue-image enlargeable-image">
+                  <img src="photos/venue2.jpeg" alt="Venue Photo 2" class="venue-image enlargeable-image">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <p class="footer-text">We can't wait to celebrate with you!</p>
+        <p class="footer-decoration">🌸 🌸 🌸</p>
+    </footer>
+
+    <!-- The Modal/Lightbox (No changes needed here) -->
+    <div id="imageModal" class="modal">
+      <span class="close-button">×</span>
+      <img class="modal-content" id="modalImage">
+      <div id="caption"></div>
     </div>
 
-    <!-- Venue Section -->
-    <div class="venue-container">
+    <!-- Link to the JavaScript file (No changes needed here) -->
+    <script src="script.js"></script>
 
-        <!-- Venue Details -->
-        <div class="venue-section">
-            <h2>Wedding Venue</h2>
-            <p><strong>Date:</strong> May 23, 2025 (Friday)</p>
-            <p><strong>Muhurtam:</strong> 06:49 PM</p>
-            <p><strong>Venue:</strong> Shiv Sagar Karyalay</p>
-            <button>
-                <a href="https://www.google.com/maps/place/Shivsagar+Mangal+Karyalay/@17.2393351,74.5833318,17z/data=!4m6!3m5!1s0x3bc1698f1ecb3ca3:0x685d6fbbaf2d7fa3!8m2!3d17.2393351!4d74.5833318!16s%2Fg%2F11j4v7jx8j?entry=ttu&g_ep=EgoyMDI1MDQyMS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" target="_blank">View Map</a>
-            </button>
-        </div>
-
-        <!-- Venue Photos -->
-        <div class="venue-images">
-          <img src="photos/venue1.jpeg" alt="Venue Photo 1">
-          <img src="photos/venue2.jpeg" alt="Venue Photo 2">
-        </div>
-    </div>
-
-    <footer style="margin-top: 50px; text-align: center;">
-      <p class="footer-dot">
-        🌸 🌸 🌸
-      </p>
-      <hr  class="footer-border-down">
-  </footer>
 </body>
 </html>

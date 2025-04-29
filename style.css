@@ -1,227 +1,551 @@
+/* --- Add this CSS rule --- */
+.enlargeable-image {
+    cursor: pointer; /* Indicate clickability */
+}
+
+/* --- Existing CSS below (no other changes needed for this feature) --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Lato', sans-serif;
     text-align: center;
-    background-color: #faf1e6;
+    background-color: #fdf8f0;
+    color: #5d4037;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll potentially caused by animations/transforms */
+}
+
+.script-font {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    color: #8d6e63;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #6a1b9a;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(106, 27, 154, 0.2);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(106, 27, 154, 0.5);
+    }
+}
+
+@keyframes gentleFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px); /* Gentle lift */
+    }
+}
+
+.animate-on-load {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+
+
+.hero-section {
+    background: linear-gradient(rgba(241, 217, 205, 0.8), rgba(241, 217, 205, 0.8)), url('photos/background-texture.jpg'); /* Example background - replace if needed */
+    background-color: #f5e1d7;
     background-size: cover;
+    background-position: center;
+    color: #795548;
+    padding: 60px 20px 40px;
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Header Styles */
-header {
-    background-color: #f1d9cd;
-    color: #6e5a5a;
-    padding: 10px;
+.hero-content .couple-name-hero {
+    font-size: 4rem; /* Larger names */
+    line-height: 1.1;
+    color: #5d4037; /* Darker brown for names */
+    animation: fadeInUp 1s ease-out forwards; /* Animate names */
+}
+
+.hero-content .weds-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin: 10px 0;
+    color: #8d6e63;
+    animation: fadeInUp 1s ease-out 0.2s forwards; /* Animate with delay */
+    opacity: 0;
+}
+
+.hero-content .invitation-text {
+    font-family: 'Lato', sans-serif;
     font-size: 1.2rem;
-    font-family: 'Georgia', serif;
+    margin-top: 15px;
+    color: #795548;
+    animation: fadeInUp 1s ease-out 0.4s forwards; /* Animate with delay */
+    opacity: 0;
 }
 
-header h1 {
-    margin: 0;
-    text-decoration: underline;
-    font-family: 'Brush Script MT', cursive;
-    font-size: 3rem;
+/* Floating animation for flowers */
+.flower-deco {
+    display: inline-block;
+    animation: gentleFloat 3s ease-in-out infinite;
+}
+/* Stagger flower animations */
+.hero-content .flower-deco:nth-child(1) { animation-delay: 0s; }
+.hero-content .flower-deco:nth-child(2) { animation-delay: 0.5s; }
+.page-footer .flower-deco:nth-child(1) { animation-delay: 0.2s; }
+.page-footer .flower-deco:nth-child(2) { animation-delay: 0.7s; }
+.page-footer .flower-deco:nth-child(3) { animation-delay: 0.4s; }
+
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-header h2 {
-  font-family: 'Georgia', serif;
-  font-size: 2rem;
-  margin: 0;
+.couple-image-section {
+    margin: 40px 0;
 }
 
 .couple-image {
-    width: 60%;
+    width: 100%;
+    max-width: 600px;
     height: auto;
-    border-radius: 5%;
-    margin-top: 50px;
+    border-radius: 15px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.save-date {
-    font-size: 2.5rem;
-    color: #6b001c;
-    margin-top: 10px;
-    font-family: 'Brush Script MT', serif;
+.couple-image:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-.names-date {
-    font-size: 3rem;
-    color: #6b001c;
-    margin-top: 3%;
-    font-family: 'Papyrus', serif;
+.save-date-section {
+    margin: 50px 0;
+    padding: 20px;
 }
 
-.getting_married {
-    font-size: 2rem;
-    color: #6b001c;
-    font-family: 'Brush Script MT', serif;
+.save-date-section .section-title {
+    font-size: 3.5rem;
+    color: #c8a47e;
+    margin-bottom: 5px;
 }
 
-/* Flexbox for Groom and Bride images with names */
-.couple-info {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 30px;
-    align-items: center;
-}
-
-.couple-info img {
-    width: 50%;
-    border-radius: 10px;
-}
-
-.couple-info .groom, .couple-info .bride {
+.save-date-section .tagline {
+    font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
-    color: #6b001c;
-    margin-top: 15px;
-    font-family: 'Georgia', serif;
+    color: #795548;
+    margin-bottom: 20px;
 }
 
-.couple-info .groom-degree, .couple-info .bride-degree {
-    font-size: 1.2rem;
-    color: #6b001c;
-    font-family: 'Georgia', serif;
-    margin-top: 10px;
+.save-date-section .save-date-title {
+    font-size: 2.8rem;
+    color: #a1887f;
+    margin-bottom: 10px;
 }
+
+.save-date-section .wedding-date {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #6a1b9a;
+    background-color: rgba(245, 225, 215, 0.5);
+    padding: 8px 18px;
+    border-radius: 8px;
+    display: inline-block;
+    animation: pulseGlow 2.5s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+.section-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #c8a47e, transparent); 
+    margin: 60px auto;
+    width: 80%;
+    max-width: 500px;
+}
+
+/* Couple Details Section */
+.couple-details-section {
+    margin: 50px 0;
+}
+
+.couple-info-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    align-items: stretch;
+    justify-items: center;
+}
+
+.person-info {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.person-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.person-image {
+    width: 60%;
+    max-width: 180px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+    border: 4px solid #f5e1d7;
+     /* Add transition for smoother hover effect if needed */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.person-image:hover {
+     transform: scale(1.05); 
+     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+.person-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #6a1b9a;
+    margin-bottom: 10px;
+}
+
+.person-details {
+    font-size: 1rem;
+    color: #795548;
+    margin-bottom: 5px;
+    flex-grow: 1;
+}
+
+.person-details.parentage {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #a1887f;
+    margin-top: 15px;
+    flex-grow: 0;
+}
+
+/* Styles for Portrait Image Section */
+.portrait-image-section {
+    margin: 60px 0;
+    text-align: center;
+}
+
+.portrait-image-section .section-title {
+    font-size: 3rem; 
+    color: #a1887f; 
+    margin-bottom: 25px;
+}
+
+.portrait-image {
+    display: block; 
+    max-width: 90%; 
+    width: 350px; 
+    height: auto; 
+    margin: 0 auto 15px auto; 
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portrait-image:hover {
+    transform: scale(1.04);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+.click-hint {
+    font-size: 0.9rem;
+    color: #8d6e63;
+    margin-top: 15px;
+    font-style: italic;
+}
+
 
 /* Venue Section */
+.venue-section-wrapper {
+    margin: 50px 0;
+    padding: 30px 10px;
+    background-color: rgba(245, 225, 215, 0.3);
+    border-radius: 15px;
+}
+
 .venue-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 30px;
-    margin: 50px auto;
-    max-width: 1200px;
+    align-items: center; /* Align items vertically */
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 30px;
 }
 
-.venue-images {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.venue-images img {
-    width: 400px;
-    height: auto;
+/* Venue Details Box */
+.venue-details-box {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    padding: 30px;
+    border: 1px solid #e0c5b8;
     border-radius: 10px;
-    box-shadow: 13px 13px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.venue-section {
-padding: 30px; /* Increased padding for better spacing */
-max-width: 700px; /* Increased the size of the venue box */
-border: 2px solid #9b1f40;
-border-radius: 10px;
-background-color: #ffffff;
-box-shadow: 13px 13px 6px rgba(0, 0, 0, 0.1);
-text-align: left;
+.venue-details-box:hover {
+     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+     transform: translateY(-3px);
 }
 
-.venue-section h2 {
-    color: #9b1f40;
-    font-family: 'Georgia', serif;
+.venue-details-box h3 {
+    color: #6a1b9a;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
     text-align: center;
-    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
-.venue-section p {
-    margin: 10px 0;
-    color: #6b001c;
-    font-family: 'Georgia', serif;
-    font-size: 1.2rem;
+.venue-details-box p {
+    margin-bottom: 12px;
+    color: #5d4037;
+    font-size: 1.1rem;
+}
+.venue-details-box p strong {
+    color: #795548;
+    margin-right: 5px;
 }
 
-.venue-section button {
+/* Map Button */
+.map-button {
     display: block;
     width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    background-color: #9b1f40;
+    padding: 12px 20px;
+    margin-top: 20px;
+    background-color: #8d6e63;
     color: #ffffff;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 1.2rem;
-    font-family: 'Arial', sans-serif;
-}
-
-.venue-section button:hover {
-    background-color: #73132e;
-}
-
-.venue-section button a {
-    color: #ffffff;
+    font-size: 1.1rem;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
     text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.footer-border-down{
+.map-button:hover {
+    background-color: #795548;
+    transform: translateY(-2px);
+}
+
+/* Venue Images */
+.venue-images {
+    flex: 1;
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+    min-width: 300px;
+    max-width: 450px;
+    align-self: center; 
+}
+
+.venue-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.venue-image:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  left: 0;
+  top: 0;
   width: 100%;
-  border: 1px solid #6b001c;
-  margin: 0 auto;
-  margin-bottom: 20px;
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.9); 
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+  padding: 20px; 
 }
 
-
-.footer-dot{
-  font-size: 1.5rem; 
-  color: #6b001c; 
-  font-family: 'Georgia', serif;
-  margin: 0 auto;
+.modal-content {
+  margin: auto; 
+  display: block;
+  max-width: 90%;  
+  max-height: 80vh; 
+  width: auto; 
+  height: auto; 
+  animation-name: zoomIn;
+  animation-duration: 0.4s;
 }
 
-/* Responsive Layout */
+@keyframes zoomIn {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 1001; 
+}
+.close-button:hover,
+.close-button:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#caption {
+  margin: 15px auto 0 auto; 
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: auto; 
+  line-height: 1.4;
+}
+
+/* Footer */
+.page-footer {
+    margin-top: 60px;
+    padding: 30px 20px;
+    background-color: #f5e1d7;
+    color: #795548;
+}
+
+.page-footer .footer-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.page-footer .footer-decoration {
+    font-size: 1.5rem;
+    color: #c8a47e; /* Golden brown flowers */
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .section-title { font-size: 2.2rem; }
+    .hero-content .couple-name-hero { font-size: 3.5rem; }
+    .hero-content .weds-text { font-size: 1.8rem; }
+    .save-date-section .section-title { font-size: 3rem; }
+    .save-date-section .save-date-title { font-size: 2.5rem; }
+    .save-date-section .wedding-date { font-size: 1.8rem; }
+    .couple-info-container { gap: 20px; }
+    .venue-container { gap: 30px; }
+    .portrait-image-section .section-title { font-size: 2.8rem; }
+}
+
 @media (max-width: 768px) {
-    .venue-container {
-      flex-direction: column;
-      align-items: center;
-    }
+    .hero-content .couple-name-hero { font-size: 2.8rem; }
+    .hero-content .weds-text { font-size: 1.5rem; }
+    .hero-content .invitation-text { font-size: 1rem; }
+    .section-title { font-size: 2rem; }
+    .save-date-section .section-title { font-size: 2.5rem; }
+    .save-date-section .tagline { font-size: 1.3rem; }
+    .save-date-section .save-date-title { font-size: 2.2rem; }
+    .save-date-section .wedding-date { font-size: 1.5rem; animation: none; }
+    .couple-info-container { grid-template-columns: 1fr; align-items: center; }
+    .person-info { width: 90%; max-width: 400px; }
+    .person-image { width: 50%; max-width: 150px; }
+    .person-name { font-size: 1.6rem; }
+    .portrait-image-section .section-title { font-size: 2.5rem; }
+    .portrait-image { width: 300px; max-width: 80%; }
+    .venue-container { flex-direction: column; align-items: center; gap: 30px; }
+    .venue-details-box, .venue-images { width: 90%; max-width: 450px; flex: none; }
+    .page-footer .footer-text { font-size: 1.3rem; }
+    .modal-content { max-width: 95%; max-height: 75vh; }
+    .close-button { font-size: 35px; top: 10px; right: 25px; }
+}
 
-    .venue-images img {
-      width: 90%;
-      margin: 0 auto;
-    }
-
-    .venue-section {
-      width: 80%;
-      margin-top: 20px;
-      max-width: 350px;
-    }
-
-    .couple-info img {
-      width: 80%;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    header {
-      text-align: center;
-    }
-    .couple-image {
-        width: 100%;
-        height: auto;
-        border-radius: 0%;
-        margin-top: 50px;
-    }
-    .getting_married {
-        font-size: 2rem;
-        color: #6b001c;
-        font-family: 'Brush Script MT', serif;
-    }
-    .save-date {
-        font-size: 2.5rem;
-        color: #6b001c;
-        margin-top: 10px;
-        font-family: 'Brush Script MT', serif;
-    }
-    
-    .names-date {
-        font-size: 3rem;
-        color: #6b001c;
-        margin-top: 3%;
-        font-family: 'Papyrus', serif;
-    }
-    
-    .getting_married {
-        font-size: 2rem;
-        color: #6b001c;
-        font-family: 'Brush Script MT', serif;
-    }    
+@media (max-width: 480px) {
+    body { font-size: 15px; }
+    .hero-content .couple-name-hero { font-size: 2.2rem; }
+    .hero-content .weds-text { font-size: 1.2rem; }
+    .hero-content .invitation-text { font-size: 0.9rem; }
+    .section-title { font-size: 1.8rem; }
+    .save-date-section .section-title { font-size: 2rem; }
+    .save-date-section .save-date-title { font-size: 1.8rem; }
+    .save-date-section .wedding-date { font-size: 1.3rem; padding: 6px 12px; }
+    .person-name { font-size: 1.4rem; }
+    .person-details { font-size: 0.9rem; }
+    .person-info { padding: 20px 15px; }
+    .portrait-image-section .section-title { font-size: 2.2rem; }
+    .portrait-image { width: 250px; max-width: 75%; }
+    .venue-details-box h3 { font-size: 1.5rem; }
+    .venue-details-box p { font-size: 1rem; }
+    .map-button { font-size: 1rem; padding: 10px 15px; }
 }
