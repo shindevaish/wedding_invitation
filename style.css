@@ -94,11 +94,19 @@ body {
     align-items: center;
 }
 
+.ganpati-image {
+    display: block;
+    margin: 0 auto 20px auto;
+    max-width: 100px;
+    height: auto;
+    opacity: 0;
+}
+
+
 .hero-content .couple-name-hero {
-    font-size: 4rem; /* Larger names */
+    font-size: 4rem;
     line-height: 1.1;
-    color: #5d4037; /* Darker brown for names */
-    animation: fadeInUp 1s ease-out forwards; /* Animate names */
+    color: #5d4037;
 }
 
 .hero-content .weds-text {
@@ -106,8 +114,6 @@ body {
     font-size: 2rem;
     margin: 10px 0;
     color: #8d6e63;
-    animation: fadeInUp 1s ease-out 0.2s forwards; /* Animate with delay */
-    opacity: 0;
 }
 
 .hero-content .invitation-text {
@@ -115,16 +121,12 @@ body {
     font-size: 1.2rem;
     margin-top: 15px;
     color: #795548;
-    animation: fadeInUp 1s ease-out 0.4s forwards; /* Animate with delay */
-    opacity: 0;
 }
 
-/* Floating animation for flowers */
 .flower-deco {
     display: inline-block;
     animation: gentleFloat 3s ease-in-out infinite;
 }
-/* Stagger flower animations */
 .hero-content .flower-deco:nth-child(1) { animation-delay: 0s; }
 .hero-content .flower-deco:nth-child(2) { animation-delay: 0.5s; }
 .page-footer .flower-deco:nth-child(1) { animation-delay: 0.2s; }
@@ -198,13 +200,12 @@ main {
 .section-divider {
     border: none;
     height: 1px;
-    background: linear-gradient(to right, transparent, #c8a47e, transparent); 
+    background: linear-gradient(to right, transparent, #c8a47e, transparent);
     margin: 60px auto;
     width: 80%;
     max-width: 500px;
 }
 
-/* Couple Details Section */
 .couple-details-section {
     margin: 50px 0;
 }
@@ -245,12 +246,11 @@ main {
     border-radius: 50%;
     margin: 0 auto 20px auto;
     border: 4px solid #f5e1d7;
-     /* Add transition for smoother hover effect if needed */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .person-image:hover {
-     transform: scale(1.05); 
+     transform: scale(1.05);
      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -277,24 +277,23 @@ main {
     flex-grow: 0;
 }
 
-/* Styles for Portrait Image Section */
 .portrait-image-section {
     margin: 60px 0;
     text-align: center;
 }
 
 .portrait-image-section .section-title {
-    font-size: 3rem; 
-    color: #a1887f; 
+    font-size: 3rem;
+    color: #a1887f;
     margin-bottom: 25px;
 }
 
 .portrait-image {
-    display: block; 
-    max-width: 90%; 
-    width: 350px; 
-    height: auto; 
-    margin: 0 auto 15px auto; 
+    display: block;
+    max-width: 90%;
+    width: 350px;
+    height: auto;
+    margin: 0 auto 15px auto;
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -312,25 +311,40 @@ main {
     font-style: italic;
 }
 
+.single-event-container { /* Kept for potential future use if a section becomes text-only again */
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    padding: 0 10px;
+}
 
-/* Venue Section */
+.single-event-container .venue-details-box {
+    flex-grow: 0;
+}
+
 .venue-section-wrapper {
     margin: 50px 0;
     padding: 30px 10px;
     background-color: rgba(245, 225, 215, 0.3);
     border-radius: 15px;
+    text-align: center;
 }
+
+.venue-section-wrapper .section-title {
+    margin-bottom: 0; /* Section title is directly above the venue-container */
+    margin-top: 0; /* Wrapper handles top margin */
+}
+
 
 .venue-container {
     display: flex;
     justify-content: center;
-    align-items: center; /* Align items vertically */
+    align-items: flex-start; /* Aligns tops of details box and image */
     gap: 40px;
     flex-wrap: wrap;
-    margin-top: 30px;
+    margin-top: 30px; /* Space between section title and content */
 }
 
-/* Venue Details Box */
 .venue-details-box {
     flex: 1;
     min-width: 300px;
@@ -349,7 +363,7 @@ main {
      transform: translateY(-3px);
 }
 
-.venue-details-box h3 {
+.venue-details-box h3 { /* This h3 is not used in the event detail boxes anymore, but kept for general use */
     color: #6a1b9a;
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
@@ -357,17 +371,36 @@ main {
     margin-bottom: 20px;
 }
 
+/* General style for paragraphs in venue-details-box */
 .venue-details-box p {
     margin-bottom: 12px;
     color: #5d4037;
     font-size: 1.1rem;
 }
+
+/* --- NEW CSS FOR CEREMONY DESCRIPTION --- */
+/* Style for the ceremony description paragraph (the first one) */
+.venue-details-box p:first-child {
+    font-style: italic;
+    color: #75615a; /* A slightly different, perhaps softer, brown for emphasis */
+    margin-bottom: 20px; /* Increased space below the description */
+    padding-bottom: 12px; /* Space before the border */
+    border-bottom: 1px dashed #d1bfa7; /* A subtle, decorative dashed border */
+    line-height: 1.7; /* Slightly more spacious line height for readability */
+}
+
+/* Ensure subsequent paragraphs (Date, Time, Venue) are not italic */
+.venue-details-box p:not(:first-child) {
+    font-style: normal; /* Explicitly set to normal if there's any inheritance concern */
+}
+/* --- END OF NEW CSS FOR CEREMONY DESCRIPTION --- */
+
+
 .venue-details-box p strong {
     color: #795548;
     margin-right: 5px;
 }
 
-/* Map Button */
 .map-button {
     display: block;
     width: 100%;
@@ -390,15 +423,13 @@ main {
     transform: translateY(-2px);
 }
 
-/* Venue Images */
 .venue-images {
     flex: 1;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     gap: 20px;
     min-width: 300px;
     max-width: 450px;
-    align-self: center; 
 }
 
 .venue-image {
@@ -410,34 +441,34 @@ main {
 }
 
 .venue-image:hover {
-    transform: scale(1.05); 
+    transform: scale(1.05);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
 .modal {
-  display: none; 
-  position: fixed; 
-  z-index: 1000; 
+  display: none;
+  position: fixed;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%; 
-  overflow: auto; 
+  height: 100%;
+  overflow: auto;
   background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.9); 
+  background-color: rgba(0,0,0,0.9);
   justify-content: center;
   align-items: center;
-  flex-direction: column; 
-  padding: 20px; 
+  flex-direction: column;
+  padding: 20px;
 }
 
 .modal-content {
-  margin: auto; 
+  margin: auto;
   display: block;
-  max-width: 90%;  
-  max-height: 80vh; 
-  width: auto; 
-  height: auto; 
+  max-width: 90%;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
   animation-name: zoomIn;
   animation-duration: 0.4s;
 }
@@ -456,7 +487,7 @@ main {
   font-weight: bold;
   transition: 0.3s;
   cursor: pointer;
-  z-index: 1001; 
+  z-index: 1001;
 }
 .close-button:hover,
 .close-button:focus {
@@ -466,18 +497,17 @@ main {
 }
 
 #caption {
-  margin: 15px auto 0 auto; 
+  margin: 15px auto 0 auto;
   display: block;
   width: 80%;
   max-width: 700px;
   text-align: center;
   color: #ccc;
   padding: 10px 0;
-  height: auto; 
+  height: auto;
   line-height: 1.4;
 }
 
-/* Footer */
 .page-footer {
     margin-top: 60px;
     padding: 30px 20px;
@@ -493,12 +523,12 @@ main {
 
 .page-footer .footer-decoration {
     font-size: 1.5rem;
-    color: #c8a47e; /* Golden brown flowers */
+    color: #c8a47e;
 }
 
-/* Responsive Design */
 @media (max-width: 992px) {
     .section-title { font-size: 2.2rem; }
+    .ganpati-image { max-width: 90px; margin-bottom: 15px;}
     .hero-content .couple-name-hero { font-size: 3.5rem; }
     .hero-content .weds-text { font-size: 1.8rem; }
     .save-date-section .section-title { font-size: 3rem; }
@@ -510,6 +540,7 @@ main {
 }
 
 @media (max-width: 768px) {
+    .ganpati-image { max-width: 80px; margin-bottom: 15px;}
     .hero-content .couple-name-hero { font-size: 2.8rem; }
     .hero-content .weds-text { font-size: 1.5rem; }
     .hero-content .invitation-text { font-size: 1rem; }
@@ -524,14 +555,24 @@ main {
     .person-name { font-size: 1.6rem; }
     .portrait-image-section .section-title { font-size: 2.5rem; }
     .portrait-image { width: 300px; max-width: 80%; }
-    .venue-container { flex-direction: column; align-items: center; gap: 30px; }
-    .venue-details-box, .venue-images { width: 90%; max-width: 450px; flex: none; }
+    /* This rule ensures ceremony details and images stack on smaller screens */
+    .venue-container {
+        flex-direction: column;
+        align-items: center; /* Centers the stacked items */
+        gap: 30px;
+    }
+    .venue-details-box, .venue-images {
+        width: 90%; /* Use a percentage for better adaptability */
+        max-width: 450px; /* But also cap the max width */
+        flex: none; /* Override the flex: 1 from larger screens */
+    }
     .page-footer .footer-text { font-size: 1.3rem; }
     .modal-content { max-width: 95%; max-height: 75vh; }
     .close-button { font-size: 35px; top: 10px; right: 25px; }
 }
 
 @media (max-width: 480px) {
+    .ganpati-image { max-width: 90px; margin-bottom: 10px;}
     body { font-size: 15px; }
     .hero-content .couple-name-hero { font-size: 2.2rem; }
     .hero-content .weds-text { font-size: 1.2rem; }
@@ -546,6 +587,13 @@ main {
     .portrait-image-section .section-title { font-size: 2.2rem; }
     .portrait-image { width: 250px; max-width: 75%; }
     .venue-details-box h3 { font-size: 1.5rem; }
-    .venue-details-box p { font-size: 1rem; }
+    /* Adjusting ceremony description for very small screens */
+    .venue-details-box p:first-child {
+        font-size: 1rem; /* Slightly smaller font for description on small screens */
+        line-height: 1.6;
+    }
+    .venue-details-box p {
+        font-size: 0.95rem; /* Adjusting other p tags in the box as well */
+    }
     .map-button { font-size: 1rem; padding: 10px 15px; }
 }

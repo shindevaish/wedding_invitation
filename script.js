@@ -43,3 +43,5 @@ if (modal) {
 } else {
     console.error("Modal element with ID 'imageModal' not found.");
 }
+
+
